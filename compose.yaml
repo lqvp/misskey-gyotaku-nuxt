@@ -1,0 +1,7 @@
+services:
+  nuxt:
+    build: .
+    ports:
+      - '5000:3000'
+    environment:
+      - API_ENDPOINT=${API_ENDPOINT}
