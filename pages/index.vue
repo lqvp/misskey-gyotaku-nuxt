@@ -19,7 +19,7 @@
 		</div>
 		<div :class="$style.ui">
 			<UiFormMgInput v-model="input" :class="$style.input" placeholder="Misskey Instance URL" />
-			<UiFormMgInput v-model="authToken" :class="$style.input" placeholder="Auth Token (optional)" />>
+			<UiFormMgInput v-model="authToken" :class="$style.input" placeholder="Auth Token (optional)" />
 			<UiMgButton :class="$style.button" @click="submit">Go</UiMgButton>
 			<!-- <UiMgAccordion>
 				<template #header>

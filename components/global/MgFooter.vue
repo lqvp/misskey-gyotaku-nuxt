@@ -2,6 +2,8 @@
 	<footer :class="$style.root">
 		<div>
 			© {{ new Date().getFullYear() }}
+			<UiMgLink :class="$style.link" href="https://github.com/lqvp/misskey-gyotaku-nuxt">This project is a fork.</UiMgLink>
+			The original project is
 			<UiMgLink :class="$style.link" href="https://github.com/sim1222">sim1222</UiMgLink>. View on
 			<UiMgLink :class="$style.link" href="https://github.com/sim1222/misskey-gyotaku">GitHub</UiMgLink>
 		</div>
