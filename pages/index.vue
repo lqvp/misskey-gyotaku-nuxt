@@ -19,6 +19,7 @@
 		</div>
 		<div :class="$style.ui">
 			<UiFormMgInput v-model="input" :class="$style.input" placeholder="Misskey Instance URL" />
+			<UiFormMgInput v-model="authToken" :class="$style.input" placeholder="Auth Token (optional)" />>
 			<UiMgButton :class="$style.button" @click="submit">Go</UiMgButton>
 			<!-- <UiMgAccordion>
 				<template #header>
@@ -32,17 +33,23 @@
 		</div>
 	</div>
 </template>
+
 <script lang="ts" setup>
 const router = useRouter();
 
 const input = ref('');
+const authToken = ref('');
 
 const submit = () => {
 	if (!input.value) return;
 	fetch(`${useRuntimeConfig().apiEndpoint}/api/v1/generate`, {
 		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
 		body: JSON.stringify({
 			url: input.value,
+			auth_token: authToken.value || undefined,
 		}),
 	})
 		.then(res => res.json())
